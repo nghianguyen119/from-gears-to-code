@@ -8,7 +8,5 @@ type Props = {
 };
 
 export default function Layout({ variant = "main", children }: Props) {
-  if (variant === "main") {
-    return <MainLayout>{children}</MainLayout>;
-  }
+  return <MainLayout>{children}</MainLayout>;
 }

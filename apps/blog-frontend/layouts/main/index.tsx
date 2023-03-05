@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useRouter } from "next/router";
 import { Box, Link, Container, Typography, Stack } from "@mui/material";
-import Logo from "../../components/Logo";
+import Logo from "@blog-frontend/components/Logo";
 import MainFooter from "./MainFooter";
 import MainHeader from "./MainHeader";
 
@@ -39,7 +39,7 @@ export default function MainLayout({ children }: Props) {
             <Typography variant="caption" component="p">
               © All rights reserved
               <br /> made by &nbsp;
-              <Link href="https://minimals.cc/">minimals.cc</Link>
+              <Link href="https://trongnghia.cc">trongnghia.cc</Link>
             </Typography>
           </Container>
         </Box>

@@ -12,15 +12,21 @@
     "@iconify/react": "^4.1.0",
     "@mui/material": "^5.11.11",
     "@mui/styles": "^5.11.11",
+    "@types/cookie": "^0.5.1",
     "@types/node": "^17.0.12",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@uikit/standard": "workspace:*",
+    "@uikit/types": "workspace:*",
+    "cookie": "^0.5.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.0.0",
+    "framer-motion": "^10.0.2",
     "next": "^13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "simplebar": "^5.3.8",
+    "simplebar-react": "^2.4.1",
     "typescript": "4.9.5"
   }
 }

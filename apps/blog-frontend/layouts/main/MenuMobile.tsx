@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react';
-// next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-// @mui
-import { alpha, styled } from '@mui/material/styles';
+import { useState, useEffect } from "react";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import { alpha, styled } from "@mui/material/styles";
 import {
   Box,
   List,
@@ -13,27 +11,25 @@ import {
   ListItemText,
   ListItemIcon,
   ListItemButton,
-  ListItemButtonProps,
-} from '@mui/material';
-// config
-import { NAVBAR } from '../../config';
-// components
-import Logo from '../../components/Logo';
-import Iconify from '../../components/Iconify';
-import Scrollbar from '../../components/Scrollbar';
-import { IconButtonAnimate } from '../../components/animate';
-import { NavSectionVertical } from '../../components/nav-section';
-//
-import { MenuProps, MenuItemProps } from './type';
+} from "@mui/material";
+import { ListItemButtonProps } from "@mui/material";
+import { NAVBAR } from "@uikit/standard/config";
+import Logo from "@blog-frontend/components/Logo";
+import Iconify from "@blog-frontend/components/Iconify";
+import Scrollbar from "@blog-frontend/components/Scrollbar";
+import { IconButtonAnimate } from "@blog-frontend/components/animate";
+import { NavSectionVertical } from "@blog-frontend/components/nav-section";
 
-// ----------------------------------------------------------------------
+import { MenuProps, MenuItemProps } from "./type";
 
-const ListItemStyle = styled(ListItemButton)<ListItemButtonProps>(({ theme }) => ({
-  ...theme.typography.body2,
-  textTransform: 'capitalize',
-  height: NAVBAR.DASHBOARD_ITEM_ROOT_HEIGHT,
-  color: theme.palette.text.secondary,
-}));
+const ListItemStyle = styled(ListItemButton)<ListItemButtonProps>(
+  ({ theme }) => ({
+    ...theme.typography.body2,
+    textTransform: "capitalize",
+    height: NAVBAR.DASHBOARD_ITEM_ROOT_HEIGHT,
+    color: theme.palette.text.secondary,
+  })
+);
 
 // ----------------------------------------------------------------------
 
@@ -69,11 +65,11 @@ export default function MenuMobile({ isOffset, isHome, navConfig }: MenuProps) {
         onClick={handleDrawerOpen}
         sx={{
           ml: 1,
-          ...(isHome && { color: 'common.white' }),
-          ...(isOffset && { color: 'text.primary' }),
+          ...(isHome && { color: "common.white" }),
+          ...(isOffset && { color: "text.primary" }),
         }}
       >
-        <Iconify icon={'eva:menu-2-fill'} />
+        <Iconify icon={"eva:menu-2-fill"} />
       </IconButtonAnimate>
 
       <Drawer
@@ -87,7 +83,12 @@ export default function MenuMobile({ isOffset, isHome, navConfig }: MenuProps) {
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem key={link.title} item={link} isOpen={open} onOpen={handleOpen} />
+              <MenuMobileItem
+                key={link.title}
+                item={link}
+                isOpen={open}
+                onOpen={handleOpen}
+              />
             ))}
           </List>
         </Scrollbar>
@@ -117,24 +118,29 @@ function MenuMobileItem({ item, isOpen, onOpen }: MenuMobileItemProps) {
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText disableTypography primary={title} />
           <Iconify
-            icon={isOpen ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
+            icon={
+              isOpen
+                ? "eva:arrow-ios-downward-fill"
+                : "eva:arrow-ios-forward-fill"
+            }
             sx={{ width: 16, height: 16, ml: 1 }}
           />
         </ListItemStyle>
 
         <Collapse in={isOpen} unmountOnExit>
-          <Box sx={{ display: 'flex', flexDirection: 'column-reverse' }}>
+          <Box sx={{ display: "flex", flexDirection: "column-reverse" }}>
             <NavSectionVertical
               navConfig={children}
               sx={{
-                '& .MuiList-root:last-of-type .MuiListItemButton-root': {
+                "& .MuiList-root:last-of-type .MuiListItemButton-root": {
                   height: 200,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  bgcolor: 'background.neutral',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundImage: 'url(/assets/illustrations/illustration_dashboard.png)',
-                  '& > *:not(.MuiTouchRipple-root)': { display: 'none' },
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  bgcolor: "background.neutral",
+                  backgroundRepeat: "no-repeat",
+                  backgroundImage:
+                    "url(/assets/illustrations/illustration_dashboard.png)",
+                  "& > *:not(.MuiTouchRipple-root)": { display: "none" },
                 },
               }}
             />
@@ -144,7 +150,7 @@ function MenuMobileItem({ item, isOpen, onOpen }: MenuMobileItemProps) {
     );
   }
 
-  if (title === 'Documentation') {
+  if (title === "Documentation") {
     return (
       <Link href={path} target="_blank" rel="noopener" underline="none">
         <ListItemStyle>
@@ -160,10 +166,13 @@ function MenuMobileItem({ item, isOpen, onOpen }: MenuMobileItemProps) {
       <ListItemStyle
         sx={{
           ...(isActive && {
-            color: 'primary.main',
-            fontWeight: 'fontWeightMedium',
+            color: "primary.main",
+            fontWeight: "fontWeightMedium",
             bgcolor: (theme) =>
-              alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+              alpha(
+                theme.palette.primary.main,
+                theme.palette.action.selectedOpacity
+              ),
           }),
         }}
       >

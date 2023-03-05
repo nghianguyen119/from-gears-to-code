@@ -6,10 +6,9 @@ import {
   Button,
   Tooltip,
   IconButton,
-  ButtonProps,
-  IconButtonProps,
 } from "@uikit/standard/components";
 import Iconify from "./Iconify";
+import { ButtonProps, IconButtonProps } from "@mui/material";
 
 export type SocialLinks = {
   facebook?: string;

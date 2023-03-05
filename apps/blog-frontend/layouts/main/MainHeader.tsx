@@ -1,6 +1,4 @@
-// next
 import { useRouter } from "next/router";
-// @mui
 import { styled, useTheme } from "@mui/material/styles";
 import {
   Box,
@@ -10,22 +8,15 @@ import {
   Container,
   Link,
 } from "@uikit/standard/components";
-// hooks
-import useOffSetTop from "../../hooks/useOffSetTop";
-import useResponsive from "../../hooks/useResponsive";
-// utils
-import cssStyles from "../../utils/cssStyles";
-// config
-import { HEADER } from "../../config";
-// components
+
+import { useOffSetTop, useResponsive } from "@uikit/standard/hooks";
+import { cssStyles } from "@uikit/standard/utils";
+import { HEADER } from "@uikit/standard/config";
 import Logo from "@blog-frontend/components/Logo";
-import Label from "../../components/Label";
-//
+import Label from "@blog-frontend/components/Label";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
 import navConfig from "./MenuConfig";
-
-// ----------------------------------------------------------------------
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: HEADER.MOBILE_HEIGHT,
@@ -50,8 +41,6 @@ const ToolbarShadowStyle = styled("div")(({ theme }) => ({
   width: `calc(100% - 48px)`,
   boxShadow: theme.customShadows.z8,
 }));
-
-// ----------------------------------------------------------------------
 
 export default function MainHeader() {
   const isOffset = useOffSetTop(HEADER.MAIN_DESKTOP_HEIGHT);
@@ -84,17 +73,6 @@ export default function MainHeader() {
         >
           <Logo />
 
-          <Link
-            href="https://docs-minimals.vercel.app/changelog"
-            target="_blank"
-            rel="noopener"
-            underline="none"
-          >
-            <Label color="info" sx={{ ml: 1 }}>
-              v3.5.0
-            </Label>
-          </Link>
-
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && (
@@ -109,7 +87,7 @@ export default function MainHeader() {
             variant="contained"
             target="_blank"
             rel="noopener"
-            href="https://material-ui.com/store/items/minimal-dashboard/"
+            href="https://trongnghia.cc"
           >
             Purchase Now
           </Button>

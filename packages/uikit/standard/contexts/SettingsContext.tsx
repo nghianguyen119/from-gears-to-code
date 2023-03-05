@@ -7,14 +7,12 @@ import {
   useEffect,
   useState,
 } from "react";
-// utils
 import getColorPresets, {
   colorPresets,
   defaultPreset,
 } from "../utils/getColorPresets";
-// config
 import { defaultSettings, cookiesKey, cookiesExpires } from "../config";
-// @type
+
 import {
   ThemeMode,
   ThemeLayout,
@@ -58,8 +56,6 @@ const initialState: SettingsContextProps = {
 
 const SettingsContext = createContext(initialState);
 
-// ----------------------------------------------------------------------
-
 type SettingsProviderProps = {
   children: ReactNode;
   defaultSettings: SettingsValueProps;
@@ -100,7 +96,6 @@ function SettingsProvider({
   };
 
   // Direction
-
   const onToggleDirection = () => {
     setSettings({
       ...settings,
@@ -124,7 +119,6 @@ function SettingsProvider({
   };
 
   // Layout
-
   const onToggleLayout = () => {
     setSettings({
       ...settings,
@@ -141,7 +135,6 @@ function SettingsProvider({
   };
 
   // Contrast
-
   const onToggleContrast = () => {
     setSettings({
       ...settings,
@@ -157,7 +150,6 @@ function SettingsProvider({
   };
 
   // Color
-
   const onChangeColor = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSettings({
       ...settings,
@@ -167,7 +159,6 @@ function SettingsProvider({
   };
 
   // Stretch
-
   const onToggleStretch = () => {
     setSettings({
       ...settings,
@@ -176,7 +167,6 @@ function SettingsProvider({
   };
 
   // Reset
-
   const onResetSetting = () => {
     setSettings({
       themeMode: initialState.themeMode,
@@ -231,8 +221,6 @@ function SettingsProvider({
 }
 
 export { SettingsProvider, SettingsContext };
-
-// ----------------------------------------------------------------------
 
 function useSettingCookies(
   defaultSettings: SettingsValueProps
