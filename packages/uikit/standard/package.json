@@ -32,6 +32,7 @@
     "tsconfig": "workspace:*"
   },
   "scripts": {
-    "lint": "eslint src/**/*.ts*"
+    "lint": "eslint --ext .ts,.tsx .",
+    "compile:fake": "tsc --noEmit"
   }
 }

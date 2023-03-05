@@ -1,4 +1,4 @@
-type ColorVariants = {
+export type ColorVariants = {
   name: string;
   lighter: string;
   light: string;

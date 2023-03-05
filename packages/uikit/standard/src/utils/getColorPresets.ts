@@ -1,7 +1,7 @@
 // theme
 import palette from "../theme/palette";
 // @type
-import { ThemeColorPresets } from "@uikit/types/theme";
+import { ThemeColorPresets, ColorVariants } from "@uikit/types/theme";
 
 export const colorPresets = [
   // DEFAULT
@@ -68,7 +68,9 @@ export const bluePreset = colorPresets[3];
 export const orangePreset = colorPresets[4];
 export const redPreset = colorPresets[5];
 
-export default function getColorPresets(presetsKey: ThemeColorPresets) {
+export default function getColorPresets(
+  presetsKey: ThemeColorPresets
+): ColorVariants {
   return {
     purple: purplePreset,
     cyan: cyanPreset,
