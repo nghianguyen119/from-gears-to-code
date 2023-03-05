@@ -1,9 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@blog-frontend/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@blog-frontend/styles/Home.module.css";
+import Layout from "@blog-frontend/layouts";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout variant="main">{page}</Layout>;
+};
 
 export default function Home() {
   return (
@@ -26,7 +31,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -119,5 +124,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }

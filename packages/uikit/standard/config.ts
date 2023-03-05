@@ -1,7 +1,5 @@
 import { enUS, frFR, zhCN, viVN, arSD } from "@mui/material/locale";
-
 import { SettingsValueProps } from "@uikit/types/theme";
-
 export const HEADER = {
   MOBILE_HEIGHT: 64,
   MAIN_DESKTOP_HEIGHT: 88,
