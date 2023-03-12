@@ -1,4 +1,4 @@
-import { PATH_AUTH, PATH_DOCS, PATH_PAGE } from "@blog-frontend/routes/paths";
+import { PATH_BLOGS, PATH_NOTES } from "@blog-frontend/routes/paths";
 import Iconify from "@blog-frontend/components/Iconify";
 
 const ICON_SIZE = {
@@ -12,55 +12,64 @@ const menuConfig = [
     icon: <Iconify icon={"eva:home-fill"} {...ICON_SIZE} />,
     path: "/",
   },
+
   {
-    title: "Components",
-    icon: <Iconify icon={"ic:round-grain"} {...ICON_SIZE} />,
-    path: PATH_PAGE.components,
-  },
-  {
-    title: "Pages",
-    path: "/pages",
+    title: "Blogs",
+    path: "/blogs",
     icon: <Iconify icon={"eva:file-fill"} {...ICON_SIZE} />,
     children: [
       {
-        subheader: "Other",
+        subheader: "Java",
         items: [
-          { title: "About us", path: PATH_PAGE.about },
-          { title: "Contact us", path: PATH_PAGE.contact },
-          { title: "FAQs", path: PATH_PAGE.faqs },
-          { title: "Pricing", path: PATH_PAGE.pricing },
-          { title: "Payment", path: PATH_PAGE.payment },
-          { title: "Maintenance", path: PATH_PAGE.maintenance },
-          { title: "Coming Soon", path: PATH_PAGE.comingSoon },
+          { title: "Blog_1", path: PATH_BLOGS.blog_1 },
+          { title: "Blog_2", path: PATH_BLOGS.blog_2 },
         ],
       },
       {
-        subheader: "Authentication",
+        subheader: "Javascript ecosystem",
         items: [
-          { title: "Login", path: PATH_AUTH.loginUnprotected },
-          { title: "Register", path: PATH_AUTH.registerUnprotected },
-          { title: "Reset password", path: PATH_AUTH.resetPassword },
-          { title: "Verify code", path: PATH_AUTH.verify },
+          { title: "Blog_1", path: PATH_BLOGS.blog_1 },
+          { title: "Blog_2", path: PATH_BLOGS.blog_2 },
         ],
-      },
-      {
-        subheader: "Error",
-        items: [
-          { title: "Page 403", path: PATH_PAGE.page403 },
-          { title: "Page 404", path: PATH_PAGE.page404 },
-          { title: "Page 500", path: PATH_PAGE.page500 },
-        ],
-      },
-      {
-        subheader: "Dashboard",
-        items: [{ title: "Dashboard", path: "PATH_AFTER_LOGIN" }],
       },
     ],
   },
   {
-    title: "Documentation",
-    icon: <Iconify icon={"eva:book-open-fill"} {...ICON_SIZE} />,
-    path: PATH_DOCS,
+    title: "Quick notes",
+    path: "/quicknotes",
+    icon: <Iconify icon={"eva:file-fill"} {...ICON_SIZE} />,
+    children: [
+      {
+        subheader: "Clean code",
+        items: [
+          { title: "The importance of clean code", path: PATH_NOTES.note_1 },
+          {
+            title: "Is it worth the time finding the well-structured methode",
+            path: PATH_NOTES.note_2,
+          },
+        ],
+      },
+      {
+        subheader: "Language A",
+        items: [
+          { title: "The importance of clean code", path: PATH_NOTES.note_1 },
+          {
+            title: "Is it worth the time finding the well-structured methode",
+            path: PATH_NOTES.note_2,
+          },
+        ],
+      },
+      {
+        subheader: "Language B",
+        items: [
+          { title: "The importance of clean code", path: PATH_NOTES.note_1 },
+          {
+            title: "Is it worth the time finding the well-structured methode",
+            path: PATH_NOTES.note_2,
+          },
+        ],
+      },
+    ],
   },
 ];
 

@@ -16,6 +16,16 @@ export const PATH_AUTH = {
   newPassword: path(ROOTS_AUTH, "/new-password"),
 };
 
+export const PATH_BLOGS = {
+  blog_1: "/blog-1",
+  blog_2: "/blog-2",
+};
+
+export const PATH_NOTES = {
+  note_1: "/blog-1",
+  note_2: "/blog-2",
+};
+
 export const PATH_PAGE = {
   comingSoon: "/coming-soon",
   maintenance: "/maintenance",

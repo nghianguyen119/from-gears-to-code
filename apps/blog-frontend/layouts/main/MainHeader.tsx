@@ -13,7 +13,6 @@ import { useOffSetTop, useResponsive } from "@uikit/standard/hooks";
 import { cssStyles } from "@uikit/standard/utils";
 import { HEADER } from "@uikit/standard/config";
 import Logo from "@blog-frontend/components/Logo";
-import Label from "@blog-frontend/components/Label";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
 import navConfig from "./MenuConfig";
@@ -82,15 +81,6 @@ export default function MainHeader() {
               navConfig={navConfig}
             />
           )}
-
-          <Button
-            variant="contained"
-            target="_blank"
-            rel="noopener"
-            href="https://trongnghia.cc"
-          >
-            Purchase Now
-          </Button>
 
           {!isDesktop && (
             <MenuMobile

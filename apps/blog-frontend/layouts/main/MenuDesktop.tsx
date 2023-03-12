@@ -79,9 +79,6 @@ export default function MenuDesktop({
         <MenuDesktopItem
           key={link.title}
           item={link}
-          isOpen={open}
-          onOpen={handleOpen}
-          onClose={handleClose}
           isOffset={isOffset}
           isHome={isHome}
         />
@@ -92,22 +89,16 @@ export default function MenuDesktop({
 
 type MenuDesktopItemProps = {
   item: MenuItemProps;
-  isOpen: boolean;
   isHome: boolean;
   isOffset: boolean;
-  onOpen: VoidFunction;
-  onClose: VoidFunction;
 };
 
-function MenuDesktopItem({
-  item,
-  isHome,
-  isOpen,
-  isOffset,
-  onOpen,
-  onClose,
-}: MenuDesktopItemProps) {
+function MenuDesktopItem({ item, isHome, isOffset }: MenuDesktopItemProps) {
   const { pathname } = useRouter();
+
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const { title, path, children } = item;
 
@@ -117,7 +108,7 @@ function MenuDesktopItem({
     return (
       <>
         <LinkStyle
-          onClick={onOpen}
+          onClick={handleOpen}
           sx={{
             display: "flex",
             cursor: "pointer",
@@ -144,7 +135,7 @@ function MenuDesktopItem({
           anchorPosition={{ top: 80, left: 0 }}
           anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
           transformOrigin={{ vertical: "top", horizontal: "center" }}
-          onClose={onClose}
+          onClose={handleClose}
           PaperProps={{
             sx: {
               px: 3,
