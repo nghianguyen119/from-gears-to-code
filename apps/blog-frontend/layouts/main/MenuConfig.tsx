@@ -26,10 +26,10 @@ const menuConfig = [
         ],
       },
       {
-        subheader: "Javascript ecosystem",
+        subheader: "Javascript",
         items: [
-          { title: "Blog_1", path: PATH_BLOGS.blog_1 },
-          { title: "Blog_2", path: PATH_BLOGS.blog_2 },
+          { title: "Blog_3", path: PATH_BLOGS.blog_1 },
+          { title: "Blog_4", path: PATH_BLOGS.blog_2 },
         ],
       },
     ],

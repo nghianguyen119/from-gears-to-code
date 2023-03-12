@@ -27,3 +27,12 @@ export { default as Popover } from "./popover";
 export { default as ListItem } from "./listitem";
 export { default as ListSubheader } from "./listsubheader";
 export { default as CardActionArea } from "./cardactionarea";
+
+export { default as Collapse } from "./collapse";
+export { default as Drawer } from "./drawer";
+
+export { default as ListItemButton } from "./listitembutton";
+export type { ListItemButtonProps } from "./listitembutton";
+
+export { default as ListItemIcon } from "./listitemicon";
+export { default as ListItemText } from "./listitemtext";

@@ -1,13 +1,6 @@
 import { useRouter } from "next/router";
 import { styled, useTheme } from "@mui/material/styles";
-import {
-  Box,
-  Button,
-  AppBar,
-  Toolbar,
-  Container,
-  Link,
-} from "@uikit/standard/components";
+import { Box, AppBar, Toolbar, Container } from "@uikit/standard/components";
 
 import { useOffSetTop, useResponsive } from "@uikit/standard/hooks";
 import { cssStyles } from "@uikit/standard/utils";
