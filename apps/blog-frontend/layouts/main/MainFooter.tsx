@@ -87,13 +87,13 @@ export default function MainFooter() {
 
                   {list.children.map((link) => (
                     <NextLink key={link.name} href={link.href} passHref>
-                      <Link
+                      <Typography
                         color="inherit"
                         variant="body2"
                         sx={{ display: "block" }}
                       >
                         {link.name}
-                      </Link>
+                      </Typography>
                     </NextLink>
                   ))}
                 </Stack>
