@@ -11,8 +11,8 @@ import {
   ListItemText,
   ListItemIcon,
   ListItemButton,
-} from "@mui/material";
-import { ListItemButtonProps } from "@mui/material";
+} from "@uikit/standard/components";
+import { ListItemButtonProps } from "@uikit/standard/components";
 import { NAVBAR } from "@uikit/standard/config";
 import Logo from "@blog-frontend/components/Logo";
 import Iconify from "@blog-frontend/components/Iconify";
@@ -83,12 +83,7 @@ export default function MenuMobile({ isOffset, isHome, navConfig }: MenuProps) {
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem
-                key={link.title}
-                item={link}
-                isOpen={open}
-                onOpen={handleOpen}
-              />
+              <MenuMobileItem key={link.title} item={link} />
             ))}
           </List>
         </Scrollbar>
@@ -101,20 +96,23 @@ export default function MenuMobile({ isOffset, isHome, navConfig }: MenuProps) {
 
 type MenuMobileItemProps = {
   item: MenuItemProps;
-  isOpen: boolean;
-  onOpen: VoidFunction;
 };
 
-function MenuMobileItem({ item, isOpen, onOpen }: MenuMobileItemProps) {
+function MenuMobileItem({ item }: MenuMobileItemProps) {
   const { pathname } = useRouter();
   const { title, path, icon, children } = item;
+  const [isOpen, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!isOpen);
+  };
 
   const isActive = pathname === path;
 
   if (children) {
     return (
       <>
-        <ListItemStyle onClick={onOpen}>
+        <ListItemStyle onClick={handleClick}>
           <ListItemIcon>{icon}</ListItemIcon>
           <ListItemText disableTypography primary={title} />
           <Iconify
