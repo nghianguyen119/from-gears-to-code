@@ -23,16 +23,14 @@
 }
 
 .component {
-  max-width: 750px;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 3rem;
 }
 
 .component blockquote.quote {
   position: relative;
   text-align: center;
-  padding: 1rem 1.2rem;
-  width: 80%; /* create space for the quotes */
+  padding: 0rem 1.2rem;
   color: white;
-  margin: 1rem auto 2rem;
+  margin: 0rem auto 2rem;
 }
