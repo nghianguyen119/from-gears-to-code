@@ -21,3 +21,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.component {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.component blockquote.quote {
+  position: relative;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  width: 80%; /* create space for the quotes */
+  color: white;
+  margin: 1rem auto 2rem;
+}
