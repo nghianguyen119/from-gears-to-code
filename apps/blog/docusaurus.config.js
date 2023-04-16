@@ -78,7 +78,7 @@ const config = {
             items: [
               {
                 label: "Language comparison",
-                to: "/docs/intro",
+                to: "/docs/languages-cheat-sheet",
               },
             ],
           },
@@ -90,7 +90,7 @@ const config = {
                 to: "https://trongnghia.vercal.app",
               },
               {
-                label: "Programming Paradigm",
+                label: "Programming Paradigms",
                 to: "https://trongnghia.vercal.app",
               },
             ],
