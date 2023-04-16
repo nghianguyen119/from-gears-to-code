@@ -51,6 +51,7 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "Trong Nghia",
+        hideOnScroll: true,
         logo: {
           alt: "N flash",
           src: "img/logo.svg",
