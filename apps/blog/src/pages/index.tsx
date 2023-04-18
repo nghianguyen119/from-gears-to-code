@@ -11,7 +11,7 @@ import {
   portfolioListData,
 } from "@site/src/data";
 import styles from "./styles.module.css";
-import dogAvatar from "@site/static/img/favicon/dog-avatar.png";
+import dogAvatar from "@site/static/img/brand/dog-avatar.png";
 import github from "@site/static/img/icon/github.png";
 import gmail from "@site/static/img/icon/gmail.png";
 import twitter from "@site/static/img/icon/twitter.png";

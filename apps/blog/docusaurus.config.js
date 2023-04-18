@@ -9,7 +9,7 @@ const config = {
   title: "Trong Nghia Blog",
   tagline:
     "Evaluating a developer's ability by lines of code is akin to measuring aircraft building progress solely by weight",
-  favicon: "img/favicon.ico",
+  favicon: "img/brand/favicon.ico",
   url: "https://trongnghia.vercel.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -68,8 +68,8 @@ const config = {
         title: "Trong Nghia",
         hideOnScroll: true,
         logo: {
-          alt: "N flash",
-          src: "img/logo.svg",
+          alt: "Trong Nghia",
+          src: "img/brand/logo.svg",
         },
         items: [
           {
