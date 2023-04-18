@@ -19,6 +19,7 @@ import telegram from "@site/static/img/icon/telegram.png";
 import homeBackground from "@site/static/img/background/home.jpg";
 import Notification from "@site/src/components/Notification";
 import Button from "@site/src/components/Button";
+
 type HomepageHeaderProps = {
   isMobileDevice: boolean;
 };
@@ -40,7 +41,7 @@ export default function Home(): JSX.Element {
           <>
             <HomepageHeader isMobileDevice={isMobileDevice} />
             <main>
-              <div className={styles.mainContainer}>
+              <div className="container mx-auto p-4 max-w-screen-lg">
                 <PortfolioArea isMobileDevice={isMobileDevice} />
               </div>
             </main>
@@ -192,7 +193,7 @@ function PortfolioArea({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
   return (
     <div className={styles.portfolioArea}>
       <div className={styles.listTitle}>{PORTFOLIO}</div>
-      <div className={styles.portfolioListWrapper}>
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {portfolioListData.map((item: PortfolioType) => {
           return (
             <Link
@@ -203,44 +204,40 @@ function PortfolioArea({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
               <div className={styles.portfolioCardLeft}>
                 <h4>{item.name}</h4>
                 <div className={styles.description}>{item.description}</div>
-                {!isMobileDevice && (
-                  <div className={styles.tagWrapper}>
-                    {item.stackTags?.map((tag: TagType) => {
-                      return (
-                        <div
-                          key={tag.name}
-                          className={styles.tag}
-                          style={{ background: tag.bgColor }}
-                        >
-                          <img
-                            src={tag.iconSrc}
-                            loading="eager"
-                            width="12"
-                            height="12"
-                          />
-                          {tag.name}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                <div className={styles.tagWrapper}>
+                  {item.stackTags?.map((tag: TagType) => {
+                    return (
+                      <div
+                        key={tag.name}
+                        className={styles.tag}
+                        style={{ background: tag.bgColor }}
+                      >
+                        <img
+                          src={tag.iconSrc}
+                          loading="eager"
+                          width="12"
+                          height="12"
+                        />
+                        {tag.name}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               <div className={styles.portfolioCardRight}>
                 <img src={item.src} loading="eager" height="40" />
-                {!isMobileDevice && (
-                  <div
-                    className={clsx(
-                      item.status === "In Development" && styles.development,
-                      item.status === "In Production" && styles.production,
-                      item.status === "Archived" && styles.archived,
-                      item.status === "Long-term Support" &&
-                        styles.longTermSupport,
-                      styles.tag
-                    )}
-                  >
-                    {item.status}
-                  </div>
-                )}
+                <div
+                  className={clsx(
+                    item.status === "In Development" && styles.development,
+                    item.status === "In Production" && styles.production,
+                    item.status === "Archived" && styles.archived,
+                    item.status === "Long-term Support" &&
+                      styles.longTermSupport,
+                    styles.tag
+                  )}
+                >
+                  {item.status}
+                </div>
               </div>
             </Link>
           );

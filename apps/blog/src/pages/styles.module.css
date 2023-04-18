@@ -168,6 +168,7 @@
   border: 1.5px solid;
   border-color: rgba(229, 231, 235, 1);
   padding: 1.5rem 1rem;
+  margin: 0.5rem 0.5rem;
   cursor: pointer;
   transition: all 150ms linear;
   text-decoration: none !important;
@@ -319,12 +320,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.mainContainer {
-  padding: 40px 20px;
-  width: 61.8%;
-  margin: auto;
 }
 
 .listTitle {
