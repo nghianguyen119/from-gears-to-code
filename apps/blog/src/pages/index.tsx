@@ -94,7 +94,10 @@ function HomepageHeader({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
             </p>
             <div className="mt-2 flex items-center justify-center gap-4">
               <Link to="/docs/languages-cheat-sheet">
-                <Button size="lg" title="My blogs" onClick={() => {}} />
+                <Button size="lg" title="Cheat sheets" onClick={() => {}} />
+              </Link>
+              <Link to="/blog">
+                <Button size="lg" title="Blogs" onClick={() => {}} />
               </Link>
             </div>
           </div>
