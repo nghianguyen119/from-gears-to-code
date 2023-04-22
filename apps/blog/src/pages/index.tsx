@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { isMobile, setClipBoardText } from "@site/src/utils";
+import { setClipBoardText } from "@site/src/utils";
 import {
   contactMeData,
   type PortfolioType,
@@ -20,10 +20,6 @@ import homeBackground from "@site/static/img/background/home.jpg";
 import Notification from "@site/src/components/Notification";
 import Button from "@site/src/components/Button";
 
-type HomepageHeaderProps = {
-  isMobileDevice: boolean;
-};
-
 type ContactMeBtnProps = {
   readonly title?: string;
   readonly src: any;
@@ -33,17 +29,22 @@ type ContactMeBtnProps = {
 };
 
 export default function Home(): JSX.Element {
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
+
   return (
     <BrowserOnly>
       {() => {
-        const isMobileDevice: boolean = isMobile();
         return (
           <>
-            <HomepageHeader isMobileDevice={isMobileDevice} />
+            <HomepageHeader />
             <main>
-              <div className="container mx-auto p-4 max-w-screen-lg">
-                <PortfolioArea isMobileDevice={isMobileDevice} />
-              </div>
+              {customFields.hasPortfolio == "true" && (
+                <div className="container mx-auto p-4 max-w-screen-lg">
+                  {customFields.hasPortfolio == "true" && <PortfolioArea />}
+                </div>
+              )}
             </main>
           </>
         );
@@ -52,11 +53,14 @@ export default function Home(): JSX.Element {
   );
 }
 
-function HomepageHeader({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
+function HomepageHeader(): JSX.Element {
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
+
   const { siteConfig } = useDocusaurusContext();
   const TRONG_NGHIA = "Trong Nghia";
-  const TO_BLOG_TEXT = "Go to Blog";
-  const COPY_SUCCESS = "Copied!";
+  const COPY_SUCCESS = "Copied to the clipboard!";
   const [show, setShow] = useState<boolean>(false);
 
   const copySuccess = (): void => {
@@ -126,9 +130,8 @@ function HomepageHeader({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
               link="/"
             />
           </div>
-          <>
-            <ArrowDownBtn />
-          </>
+
+          {customFields.hasPortfolio == "true" && <ArrowDownBtn />}
 
           <Notification show={show} title={COPY_SUCCESS} changeShow={setShow} />
         </div>
@@ -191,7 +194,7 @@ function ArrowDownBtn(): JSX.Element {
   );
 }
 
-function PortfolioArea({ isMobileDevice }: HomepageHeaderProps): JSX.Element {
+function PortfolioArea(): JSX.Element {
   const PORTFOLIO = "Portfolio";
   return (
     <div className={styles.portfolioArea}>

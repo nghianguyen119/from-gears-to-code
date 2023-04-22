@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+require("dotenv").config();
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -10,10 +11,13 @@ const config = {
   tagline:
     "Evaluating a developer's ability by lines of code is akin to measuring aircraft building progress solely by weight",
   favicon: "img/brand/favicon.ico",
-  url: "https://trongnghia.vercel.app",
+  url: "https://trongnghianguyen.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  customFields: {
+    hasPortfolio: process.env.HAS_PORTFOLIO,
+  },
   i18n: {
     defaultLocale: "en",
     locales: ["en"],

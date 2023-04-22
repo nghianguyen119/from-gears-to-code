@@ -1,2 +1,2 @@
 // Functions
-export { isMobile, setClipBoardText } from "./funcUtils";
+export { setClipBoardText } from "./funcUtils";
